@@ -1,14 +1,12 @@
 #ifndef LIBRERIA_LIBRO_H
 #define LIBRERIA_LIBRO_H
 
-#include "Listable.h"
-
 #include <string>
 
-class Libro : public Listable
+class Libro
 {
 public:
-    ~Libro() override = default;
+    virtual ~Libro() = default;
 
     unsigned long long obtenerISBN() const;
     std::string obtenerTitulo() const;
@@ -21,7 +19,6 @@ public:
     virtual std::string tipo() const = 0;
     virtual float precioVenta() const = 0;
 
-    std::string lineaListado() const override;
     virtual std::string detalle() const;
 
 protected:
