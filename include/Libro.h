@@ -15,7 +15,6 @@ public:
     int obtenerUnidadesVendidas() const;
     void registrarVenta();
 
-    // Cada subtipo indica su nombre y calcula su precio de venta.
     virtual std::string tipo() const = 0;
     virtual float precioVenta() const = 0;
 
