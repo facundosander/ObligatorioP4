@@ -1,7 +1,5 @@
 #include "Libro.h"
 
-#include <iomanip>
-#include <sstream>
 
 Libro::Libro(unsigned long long isbn, const std::string& titulo, const std::string& editorial, float precioBase)
 : isbn(isbn), titulo(titulo), editorial(editorial), precioBase(precioBase)

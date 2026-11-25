@@ -29,5 +29,12 @@ std::string Novela::detalle() const
 {
     std::string texto = Libro::detalle();
     texto = texto + "\nGenero: " + genero;
+    if (autor != nullptr)
+    {
+        texto += "\nAutor:";
+        texto += "\nCedula: " + std::to_string(autor->obtenerCedula());
+        texto += "\nNombre: " + autor->obtenerNombre();
+        texto += "\nApellido: " + autor->obtenerApellido();
+    }
     return texto;
 }

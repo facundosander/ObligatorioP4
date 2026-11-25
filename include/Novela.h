@@ -1,8 +1,8 @@
 #ifndef LIBRERIA_NOVELA_H
 #define LIBRERIA_NOVELA_H
 #include "Libro.h"
+#include "Autor.h"
 
-class Autor;
 
 class Novela : public Libro
 {
