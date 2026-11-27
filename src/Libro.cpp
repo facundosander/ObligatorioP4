@@ -2,7 +2,7 @@
 
 
 Libro::Libro(unsigned long long isbn, const std::string& titulo, const std::string& editorial, float precioBase)
-: isbn(isbn), titulo(titulo), editorial(editorial), precioBase(precioBase)
+: isbn(isbn), titulo(titulo), editorial(editorial), precioBase(precioBase), unidadesVendidas(0)
 {
 }
 

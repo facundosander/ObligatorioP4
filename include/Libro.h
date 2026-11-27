@@ -6,7 +6,6 @@
 class Libro : public Objeto
 {
 public:
-    virtual ~Libro() = default;
     unsigned long long obtenerISBN() const;
     std::string obtenerTitulo() const;
     std::string obtenerEditorial() const;
@@ -25,7 +24,7 @@ private:
     std::string titulo;
     std::string editorial;
     float precioBase;
-    int unidadesVendidas = 0;
+    int unidadesVendidas;
 };
 
 #endif

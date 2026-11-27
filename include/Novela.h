@@ -9,9 +9,9 @@ class Novela : public Libro
     public:
         Novela(unsigned long long isbn, const std::string& titulo, const std::string& editorial, float precioBase, const std::string& genero);
         void asociarAutor(const Autor& autor);
-        std::string tipo() const override;
-        float precioVenta() const override;
-        std::string detalle() const override;
+        std::string tipo() const;
+        float precioVenta() const;
+        std::string detalle() const;
     private:
         std::string genero;
         const Autor* autor = nullptr;

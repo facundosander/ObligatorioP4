@@ -1,19 +1,32 @@
 #include "Iterador.h"
 
-Iterador::Iterador() = default;
+Iterador::Iterador()
+{
+    ini = nullptr;
+    fin = nullptr;
+    cursor = nullptr;
+}
 
 Iterador::~Iterador()
 {
-    vaciar();
+    while (ini != nullptr)
+    {
+        Nodo* nodo = ini;
+        ini = ini->sig;
+        delete nodo;
+    }
 }
 
-void Iterador::agregar(const Objeto& dato)
+void Iterador::insertar(const Objeto* dato)
 {
-    Nodo* nuevo = new Nodo{&dato, nullptr};
+    Nodo* nuevo = new Nodo;
+    nuevo->dato = dato;
+    nuevo->sig = nullptr;
 
     if (fin == nullptr)
     {
         ini = nuevo;
+        cursor = nuevo;
     }
     else
     {
@@ -23,35 +36,14 @@ void Iterador::agregar(const Objeto& dato)
     fin = nuevo;
 }
 
-void Iterador::vaciar()
-{
-    while (ini != nullptr)
-    {
-        Nodo* nodo = ini;
-        ini = ini->sig;
-        delete nodo;
-    }
-
-    fin = nullptr;
-    cursor = nullptr;
-}
-
-void Iterador::reiniciar()
-{
-    cursor = ini;
-}
-
-bool Iterador::hayActual() const
+bool Iterador::hayMasObjetos() const
 {
     return cursor != nullptr;
 }
 
-const Objeto& Iterador::actual() const
+const Objeto* Iterador::proximoObjeto()
 {
-    return *cursor->dato;
-}
-
-void Iterador::avanzar()
-{
+    const Objeto* dato = cursor->dato;
     cursor = cursor->sig;
+    return dato;
 }
